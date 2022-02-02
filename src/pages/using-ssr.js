@@ -1,3 +1,4 @@
+// TODO: tsx化
 import * as React from "react"
 import { Link } from "gatsby"
 
