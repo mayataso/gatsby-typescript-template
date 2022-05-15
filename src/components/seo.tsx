@@ -1,10 +1,15 @@
-// TODO: tsx化
-import * as React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function Seo({ description, lang, meta, title }) {
+type Props = {
+  description?: string
+  lang?: string
+  meta?: HTMLMetaElement[]
+  title: string
+}
+
+const Seo: RC.WithoutChildren<Props> = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +33,6 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -62,22 +66,8 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(meta ?? [])}
     />
   )
 }
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
-
 export default Seo

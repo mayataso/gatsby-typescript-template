@@ -1,5 +1,5 @@
 {
-  "include": ["./src/**/*"],
+  "include": [ "**/*.ts", "**/*.tsx", "src/components/layout.ts"],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
