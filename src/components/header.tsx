@@ -1,6 +1,6 @@
-import * as React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import * as React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 type Props = {
   siteTitle: string
@@ -22,7 +22,7 @@ const Header: RC.WithoutChildren<Props> = ({ siteTitle }) => (
     >
       <h1 style={{ margin: 0 }}>
         <Link
-          to='/'
+          to="/"
           style={{
             color: `white`,
             textDecoration: `none`,
