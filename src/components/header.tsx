@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "@emotion/styled"
+import { Heading } from "@chakra-ui/react"
 
 type Props = {
   siteTitle: string
@@ -14,7 +15,7 @@ const Header: RC.WithoutChildren<Props> = ({ siteTitle }) => {
   `
   return (
     <Header>
-      <h1>{siteTitle}</h1>
+      <Heading>{siteTitle}</Heading>
     </Header>
   )
 }

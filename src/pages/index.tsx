@@ -1,10 +1,8 @@
+import { Center, Flex } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
-
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
@@ -21,31 +19,18 @@ const IndexPage: React.FC = () => {
       }
     }
   `)
-  console.log(data)
-
   const image = getImage(data.lagar.childImageSharp)
-
-  const Content = styled.div`
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  `
-
   const Hello = styled.span`
     font-size: 1.2rem;
   `
 
   return (
-    <Layout>
-      <Seo title="Home" />
-      <Content>
+    <>
+      <Center>
         {image && <GatsbyImage alt="らがーだよ。" image={image} />}
         <Hello>{"< "}Hi there.</Hello>
-      </Content>
-    </Layout>
+      </Center>
+    </>
   )
 }
 

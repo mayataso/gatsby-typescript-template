@@ -1,5 +1,10 @@
 {
-  "include": [ "**/*.ts", "**/*.tsx", "src/components/layout.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/layout.ts",
+    "src/wrapper.js"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
@@ -18,7 +23,7 @@
     "moduleResolution": "node",
     "baseUrl": "src",
     "paths": {
-      "~/*": ["./*"]
+      "~/*": ["./src/*"]
     }
   }
 }
