@@ -3,22 +3,22 @@ import Header from "./header"
 import { Global } from "@emotion/react"
 import globalStyle from "../styles/global.styles"
 import styled from "@emotion/styled"
+import { Helmet } from "react-helmet"
 
 const Layout: RC.WithChildren = ({ children }) => {
+  const Main = styled.main`
+    max-width: 960px;
+    margin: 0 auto;
+  `
   return (
     <>
       <React.StrictMode>
+        <Helmet>
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        </Helmet>
         <Global styles={globalStyle} />
         <Header siteTitle="Gatsby Template App" />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0 1.0875rem 1.45rem`,
-          }}
-        >
-          <main>{children}</main>
-        </div>
+        <Main>{children}</Main>
       </React.StrictMode>
     </>
   )
