@@ -1,4 +1,4 @@
-import { Center, Flex } from "@chakra-ui/react"
+import { Center } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
